@@ -1,0 +1,9 @@
+services:
+  matchme:
+    build: .
+    container_name: matchme-app
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+    restart: unless-stopped
