@@ -1,0 +1,130 @@
+:root {
+	color-scheme: light;
+	font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+	color: #23312d;
+	background: #f3f7f5;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	--ink: #23312d;
+	--muted: #687871;
+	--surface: #ffffff;
+	--line: #dce7e1;
+	--pass: #bc5360;
+	--like: #187b68;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	background: #f3f7f5;
+}
+
+.page-shell {
+	width: min(100% - 40px, 1080px);
+	margin: 0 auto;
+	padding: 48px 0 64px;
+}
+
+.page-header {
+	margin-bottom: 28px;
+	border-bottom: 1px solid var(--line);
+}
+
+.page-header h1 {
+	margin: 0 0 20px;
+	color: var(--ink);
+	font-size: 2rem;
+	font-weight: 800;
+}
+
+#profiles-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+	align-items: start;
+	gap: 20px;
+}
+
+.profile-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 24px;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: var(--surface);
+	box-shadow: 0 8px 24px rgb(35 49 45 / 8%);
+	text-align: center;
+}
+
+.profile-card img {
+	width: 112px;
+	height: 112px;
+	flex: 0 0 auto;
+	border-radius: 50%;
+	object-fit: cover;
+	background: #e5eeea;
+}
+
+.profile-card h2,
+.profile-card .profile-name {
+	margin: 16px 0 8px;
+	color: var(--ink);
+	font-size: 1.25rem;
+	font-weight: 800;
+}
+
+.profile-card p {
+	margin: 0;
+	color: var(--muted);
+	line-height: 1.5;
+}
+
+.profile-card .profile-actions {
+	display: flex;
+	width: 100%;
+	gap: 12px;
+	margin-top: 22px;
+}
+
+.profile-card .profile-actions button {
+	min-height: 44px;
+	flex: 1;
+	padding: 10px 12px;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	background: transparent;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.profile-card .btn-pass {
+	border-color: #efd8db;
+	color: var(--pass);
+}
+
+.profile-card .btn-like {
+	background: var(--like);
+	color: #ffffff;
+}
+
+.profile-card .profile-actions button:focus-visible {
+	outline: 3px solid #a7d7ca;
+	outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+	.page-shell {
+		width: min(100% - 28px, 420px);
+		padding-top: 32px;
+	}
+
+	#profiles-container {
+		grid-template-columns: 1fr;
+	}
+}
